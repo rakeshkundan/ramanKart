@@ -5,14 +5,14 @@ const options = ["Men", "Women", "Baby & Kids"];
 
 const SidebarDropDown = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selected, setSelected] = useState(
+  const [selected, setSelected] = useState<Record<string, boolean>>(
     options.reduce((acc, curr) => ({ ...acc, [curr]: false }), {})
   );
 
   const toggleDropdown = () => setIsOpen(!isOpen);
 
-  const toggleCheckbox = (label) => {
-    setSelected((prev) => ({ ...prev, [label]: !prev[label] }));
+  const toggleCheckbox = (label: string): void => {
+    setSelected((prev: Record<string, boolean>) => ({ ...prev, [label]: !prev[label] }));
   };
 
   const unselectAll = () => {
