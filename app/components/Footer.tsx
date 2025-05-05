@@ -9,11 +9,7 @@ import Visa from "../assets/visa.png";
 import { useState } from "react";
 
 export default function Footer() {
-  const [showLinks, setShowLinks] = useState({
-    mettaMuse: false,
-    quickLinks: false,
-    followUs: false,
-  });
+
 
   return (
     <footer className="bg-black text-white px-6 py-8 text-sm">
