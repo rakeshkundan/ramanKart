@@ -1,6 +1,10 @@
 import SidebarDropDown from "./SidebarDropDown";
 
-export default function SideBar({ isShow }) {
+interface SideBarProps {
+  isShow: boolean;
+}
+
+export default function SideBar({ isShow }: SideBarProps) {
   return (
     <div className={isShow ? "inline-block w-64" : "hidden"}>
       <span className="flex my-8 w-64">
