@@ -6,7 +6,7 @@ import Play from "../assets/google-play.png";
 import Money from "../assets/money.png";
 import Visa from "../assets/visa.png";
 
-import { useState } from "react";
+
 
 export default function Footer() {
 
