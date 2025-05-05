@@ -10,6 +10,8 @@ import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
 
 const Header = () => {
+  const navLinks = ["SHOP", "SKILLS", "STORIES", "ABOUT", "CONTACT US"];
+
   return (
     <>
       <header className="mx-4 sm:mx-16 grid grid-row-2 p-2 ">
@@ -37,11 +39,9 @@ const Header = () => {
           </div>
         </div>
         <nav className="hidden sm:flex justify-center gap-x-8 font-bold">
-          <a href="">SHOP</a>
-          <a href="">SKILLS</a>
-          <a href="">STORIES</a>
-          <a href="">ABOUT</a>
-          <a href="">CONTACT US</a>
+          {navLinks.map((link, index) => (
+            <a key={index} href="">{link}</a>
+          ))}
         </nav>
       </header>
       <hr />

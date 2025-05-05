@@ -45,20 +45,17 @@ const Dropdown = () => {
             {list.map((item, index) => {
               return (
                 <li
+                  key={index} // Added key prop
                   className="px-4 py-2 text-right hover:bg-gray-100"
                   onClick={() => {
                     setSelectedText(item);
                   }}
-                  //   index={index}
                 >
                   {selectedText == item && <CheckIcon />}
                   {item}
                 </li>
               );
             })}
-
-            {/* <li className="px-4 py-2 hover:bg-gray-100">Option 2</li>
-            <li className="px-4 py-2 hover:bg-gray-100">Option 3</li> */}
           </ul>
         </div>
       )}

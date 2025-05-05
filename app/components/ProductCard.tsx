@@ -2,8 +2,15 @@
 import { useEffect, useState } from "react";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 
+interface Product {
+  id: number;
+  title: string;
+  image: string;
+  // Add other properties as needed
+}
+
 const ProductCard = () => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     async function getProducts() {
@@ -24,14 +31,12 @@ const ProductCard = () => {
   return (
     <div className="px-4 my-4 sm:px-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {products.map((product) => (
+        {products.map((product,index) => (
           <div
-            key={product.id}
+            key={index}
             className="w-full border rounded-md shadow-sm p-3 relative hover:shadow-md transition"
           >
-            <p className="text-xs font-semibold text-red-500 mb-2">
-              NEW PRODUCT
-            </p>
+            <p className="text-xs font-semibold text-red-500 mb-2">NEW PRODUCT</p>
             <img
               src={product.image}
               alt={product.title}
